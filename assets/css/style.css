@@ -41,6 +41,19 @@ body {
 position: absolute;
     top: -100px;
 }
+
+hr {
+    border-style: solid none none;
+    border-width: 1px 0 0;
+    clear: both;
+    display: block;
+    height: 1px;
+    padding: 0;
+    position: relative;
+    top: -5px;
+    width: 666px;
+    border-color: #e0e0e0;
+}
 .boldText {
   font-family: "SourceSansPro-Bold";
   font-weight: bold;

@@ -142,6 +142,7 @@ function set_tab(){
 	}else{
 		$('.tab_index').removeClass('tab_index').removeAttr('tabindex');
 		$('#text_container').addClass('tab_index');
+		$('#image_container').addClass('tab_index');
 
 		$('.intrativeHeading').addClass('tab_index');
 		$('.header').addClass('tab_index');
