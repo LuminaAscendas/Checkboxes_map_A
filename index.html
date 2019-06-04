@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="HandheldFriendly" content="true" />
+    <title>Checkboxes Map Category A</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" />
+    <script type="text/javascript" src="assets/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/data.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+<body>	
+
+	<div role='main' style='display:none'></div>
+	<div role='navigation' style='display:none'></div>
+	<a href="#begin_container" id='linkId' >Skip to main content</a>
+	
+	<div id='main_container' >
+		<div class="preload">
+            <div class="loader"></div>
+        </div> 
+		<div id='begin_page'>
+			<div id='begin_focus' role='none'></div>
+			<img id='begin_container' role='img' src='assets/images/6-01_begin.png' alt='World Map'/>
+			<div role='button' id='begin_btn' aria-label='Begin'>Begin</div>
+			<div id='begin_end_focus'  role='none'></div> 
+		</div>
+		<div id='focus_guard_1' role='none'>???</div>
+		<div id='text_Div'>
+			<h1 id='text_container' class='tab_index' role='heading' aria-level='1'></h1>
+		</div>
+		<div id='responsive_container'><hr/>
+			<div id='image_container'>
+					<div class="mainGraph"></div>
+					<div class="outlineWhiteBg"></div>
+					<div class="outlineLatitude"></div>
+					<div class="outlineBlack"></div>
+					<div class="outlineBlue"></div>
+					<div class="outlineText"></div>
+					<div class="graph graph_1"></div>
+					<div class="graph graph_2"></div>
+					<div class="graph graph_3"></div>
+					<div class="graph graph_4"></div>
+					<div class="graph graph_5"></div>
+					<div class="graph graph_6"></div>
+					<div class="graph graph_7"></div>
+					<div class="graph graph_8"></div>
+					<div class="graph graph_9"></div>
+					<div class="graph graph_10"></div>
+			</div>
+			
+			<div class="intrativeContainer"></div>
+			
+			<div role='button' id='restart' aria-label='Reset'>Reset</div>
+		</div>
+		<div id='focus_guard_2' role='none'>???</div> 
+	</div>
+
+	<!-- <div id='extra_tab'></div>	 -->
+	<!-- </main> -->
+<script>
+		$.holdReady(true);
+		var preloadComplete=false;
+		$.getScript("./assets/js/lib/preloadjs-0.6.2.min.js", function() {
+			$.holdReady(false);
+			manifest = [
+				"assets/images/common/loading.gif",
+				"assets/images/common/close_btn.png",
+				"assets/images/6-01_base.png",
+				"assets/images/6-01_begin.png",
+				"assets/images/6-01_Black-Lines.png",
+				"assets/images/6-01_Blue-lines.png",
+				"assets/images/6-01_Boreal_forest.png",
+				"assets/images/6-01_Chaparral.png",
+				"assets/images/6-01_Desert.png",
+				"assets/images/6-01_float.png",
+				"assets/images/6-01_latitude_lines.png",
+				"assets/images/6-01_map_white_bg.png",
+				"assets/images/6-01_Mountains.png",
+				"assets/images/6-01_Savana.png",
+				"assets/images/6-01_Temperate_deciduous_forest.png",
+				"assets/images/6-01_Temperate_grassland.png",
+				"assets/images/6-01_Text.png",
+				"assets/images/6-01_Tropical_dry_forest.png",
+				"assets/images/6-01_Tropical_rain_forest.png",
+				"assets/images/6-01_Tundra.png",
+				"assets/images/6-01_white_area.png",
+		
+			];
+			preload = new createjs.LoadQueue(true);
+			preload.addEventListener("progress", function() {
+				//console.log('Updating preloading progress...'+Math.round(preload.progress*100)+"%");
+			});
+			preload.addEventListener("complete", function(){
+				$('.preload').fadeOut();
+			});
+			preload.setMaxConnections(5);
+			preload.loadManifest(manifest);
+		});
+</script>
+<script type="text/javascript" src="assets/js/lib/preloadjs-0.6.2.min.js"></script>
+<script type="text/javascript" src="assets/js/lib/fitToScreen.js"></script>
+</body>
+</html>
