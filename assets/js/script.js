@@ -29,10 +29,10 @@ $(document).ready(function(){
 	$('#begin_btn').off('click').on('click',function(){
 			begin_entered=true
 			$('#begin_page').hide();
-			setTimeout(function(){
+			//setTimeout(function(){
 				$('#text_container,#responsive_container,#restart').fadeIn(500);resizeApp();
 				$('.hotspot').attr('aria-hidden','false');
-			},1000);
+			//},1000);
 			
 			resizeApp();
 			set_tab();
