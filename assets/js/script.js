@@ -55,6 +55,7 @@ $(document).ready(function(){
 
 				console.log(indexId);
 				$('.graph_'+indexId).css('display','none');
+				$('#check_'+indexId).removeAttr('title');
 				
 		}else{
 	
@@ -65,7 +66,9 @@ $(document).ready(function(){
 				indexId = id.substr(id.indexOf("_") + 1);
 
 				console.log(indexId);
-				$('.graph_'+indexId).css('display','block');		
+				$('.graph_'+indexId).css('display','block');	
+				$('#check_'+indexId).attr('title', checkBoxText[indexId-1]);
+				
 		}	
 	});
 	$('#restart').off('click').on('click',function(e){
@@ -127,6 +130,19 @@ $(document).ready(function(){
 		}
 		
 	}
+	
+	$(".checkBox").mouseenter(function(){
+  		$(".checkBox").removeAttr('title');
+	});
+	
+	
+	$(".checkBox").mouseleave(function() {
+		
+		for(i=0; i<color.length; i++){
+			$(".checkBox").attr("title", checkBoxText[i]);
+		}
+	})
+	
 
 });
 window.onresize = function() {

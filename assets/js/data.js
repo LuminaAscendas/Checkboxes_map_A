@@ -5,3 +5,16 @@ var label=['Tundra','Boreal forest','Temperate deciduous forest and temperate ra
 
 
 thumb_label=['To select full size image of this thumbnail and corresponding details, press the enter or spacebar key. To move to next thumbnail, press the tab key.']
+
+var checkBoxText=[
+	"Location of Tundra in World Map",
+	"Location of Boreal forest in World Map",
+	"Location of Temperate deciduous forest and temperate rain forest in World Map",
+	"Location of Temperate grassland in World Map",
+	"Location of Chaparral in World Map",
+	"Location of Desert in World Map",
+	"Location of Tropical rain forest in World Map",
+	"Location of Tropical dry forest in World Map",
+	"Location of Savanna in World Map",
+	"Location of Mountains with complex zonation in World Map"
+]
