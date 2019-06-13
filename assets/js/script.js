@@ -12,11 +12,9 @@ $(document).ready(function(){
 	for (var j=1; j <= col; j++) {
 
 		for (i=temp; i < color.length; i++) {
-
-			insideDiv +='<div class="item"><div class="box '+color[i]+'"></div><div class="label" role="none">'+label[i]+'</div><div class="checkBox" role="checkbox" aria-label="'+label[i]+'" id="check_'+(i+1)+'" aria-checked="false"></div></div>'
+			insideDiv +='<div class="item"><div class="box '+color[i]+'"></div><div class="label" role="none">'+label[i]+'</div><div class="checkBox" role="checkbox" aria-label="'+checkBoxText[i]+'" id="check_'+(i+1)+'" aria-checked="false"></div></div>'
 			if(i==3 && j==1)break;
 			else if(i==7 && j==2)break;
-			
 		}	
 		temp=i+1;
 		columns+='<div class="column column'+j+'">'+insideDiv+'</div>';
@@ -55,7 +53,7 @@ $(document).ready(function(){
 
 				console.log(indexId);
 				$('.graph_'+indexId).css('display','none');
-				$('#check_'+indexId).removeAttr('title');
+				//$('#check_'+indexId).removeAttr('title');
 				
 		}else{
 	
@@ -67,7 +65,7 @@ $(document).ready(function(){
 
 				console.log(indexId);
 				$('.graph_'+indexId).css('display','block');	
-				$('#check_'+indexId).attr('title', checkBoxText[indexId-1]);
+				//$('#check_'+indexId).attr('title', checkBoxText[indexId-1]);
 				
 		}	
 	});
@@ -131,18 +129,16 @@ $(document).ready(function(){
 		
 	}
 	
-	$(".checkBox").mouseenter(function(){
+/* 	$(".checkBox").mouseenter(function(){
   		$(".checkBox").removeAttr('title');
 	});
-	
-	
 	$(".checkBox").mouseleave(function() {
 		
 		for(i=0; i<color.length; i++){
 			$(".checkBox").attr("title", checkBoxText[i]);
 		}
 	})
-	
+ */	
 
 });
 window.onresize = function() {
