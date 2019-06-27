@@ -12,7 +12,7 @@ $(document).ready(function(){
 	for (var j=1; j <= col; j++) {
 
 		for (i=temp; i < color.length; i++) {
-			insideDiv +='<div class="item"><div class="box '+color[i]+'"></div><div class="label" role="none">'+label[i]+'</div><div class="checkBox" role="checkbox" aria-label="'+checkBoxText[i]+'" id="check_'+(i+1)+'" aria-checked="false"></div></div>'
+			insideDiv +='<div class="item"><div class="box '+color[i]+'"></div><div class="label" role="none">'+label[i]+'</div><div class="checkBox" role="checkbox" id="check_'+(i+1)+'" aria-checked="false"></div></div>'
 			if(i==3 && j==1)break;
 			else if(i==7 && j==2)break;
 		}	
@@ -52,8 +52,18 @@ $(document).ready(function(){
 				indexId = id.substr(id.indexOf("_") + 1);
 
 				console.log(indexId);
-				$('.graph_'+indexId).css('display','none');
+
 				//$('#check_'+indexId).removeAttr('title');
+            
+            
+               	$('#check_'+indexId).removeAttr('title');
+			    $('#check_'+indexId).removeAttr('aria-label');
+				$('.graph_'+indexId).css('display','none');            
+                $('#check_'+indexId).blur();
+			     setTimeout(function(){
+				    $('#check_'+indexId).focus();
+			     },100)
+            
 				
 		}else{
 	
@@ -62,9 +72,17 @@ $(document).ready(function(){
 				
 				id = $(this).attr('id');
 				indexId = id.substr(id.indexOf("_") + 1);
-
-				console.log(indexId);
-				$('.graph_'+indexId).css('display','block');	
+                $('#check_'+indexId).attr('title',checkBoxText[indexId-1])
+			    $('#check_'+indexId).attr('aria-label',checkBoxText[indexId-1])
+				//console.log(indexId);
+				$('.graph_'+indexId).css('display','block');
+            
+                setTimeout(function(){
+				    $('#check_'+indexId).focus();
+			     },100)
+            
+            
+            
 				//$('#check_'+indexId).attr('title', checkBoxText[indexId-1]);
 				
 		}	
